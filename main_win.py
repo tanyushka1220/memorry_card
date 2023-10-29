@@ -69,8 +69,13 @@ line_V2.addWidget(rbn_list[0])
 line_V2.addWidget(rbn_list[1])
 line_V2.addWidget(rbn_list[2])
 line_V2.addWidget(rbn_list[3])
+line_h5.addLayout(line_V2)
+line_h5.addLayout(line_V3)
+box_ans.addLayout(line_h5)
 
 main_line.addLayout(line_h1)
 main_line.addLayout(line_h2)
 main_line.addLayout(line_h3)
 main_line.addLayout(line_h4)
+
+test_win.setlayout(main_line)
