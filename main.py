@@ -60,7 +60,13 @@ def click_ans(rbn):
     choice_ans = rbn.text()
 
 new_qw()
+def show_menu():
+    win.hide()
+    
+
 rbn_group.buttonClicked.connect(click_ans)
 btn_check.clicked.connect(check_ans)
+btn_mune.clicked.connect(show_menu)
+
 test_win.show()
 app.exec()
