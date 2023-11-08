@@ -1,13 +1,28 @@
-from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import QApplication, QMessageBox
 app = QApplication([])
 from main_win import*
-from data import qw_list
+from data import qw_list,Question
 from random import shuffle, choice
+from edit_win import*
 
 
 choice_ans = ""
 qw = ""
 
+def stat():
+    count = 0
+    count_r = 0
+    good = 0
+    for q in qw_list:
+        count += q.count
+        count_r += q.count_right
+    if count != 0:
+        good = count_r/count*100
+    else:
+        good = 0
+    lbl_count.setText(f"Count of answers: {count}")
+    lbl_count_right.setText(f"Count of right answers: {count_r}")
+    lbl_good.setText(f"Count of good answers: {good}")
 
 def new_qw():
     global qw
@@ -49,24 +64,53 @@ def check_ans():
             box_result.show()
     else:
         new_qw()
-        nul_ans.
+        nul_ans()
         btn_check.setText("Check")
         box_ans.show()
         box_result.hide()
 
+def clear():
+    qw_text = edit_qw.text()
+    ans_text = edit_ans.text()
+    wr1_text = edit_wrong1.text()
+    wr2_text = edit_wrong2.text()
+    wr3_text = edit_wrong3.text()
+
+def add_qw():
+    qw_text = edit_qw.text()
+    ans_text = edit_ans.text()
+    wr1_text = edit_wrong1.text()
+    wr2_text = edit_wrong2.text()
+    wr3_text = edit_wrong3.text()
+    if qw_text != " " and ans_text != " " and wr1_text != " " and wr2_text != " " and wr3_text != " ":
+        q = Question(qw_text, ans_text, wr1_text, wr2_text, wr3_text)
+        qw_list.append()
+    else:
+        mes = QMessageBox()
+        mes.setText("text")
+        mes.show()
+        mes.exec()
 
 def click_ans(rbn):
     global choice_ans
     choice_ans = rbn.text()
 
-new_qw()
+new_qw()    
 def show_menu():
-    win.hide()
+    stat()
+    test_win.hide()
+    edit_win.show()
     
+def show_test():
+    test_win.show()
+    edit_win.hide()
 
 rbn_group.buttonClicked.connect(click_ans)
 btn_check.clicked.connect(check_ans)
 btn_mune.clicked.connect(show_menu)
+btn_back.clicked.connect(show_test)
+btn_add_qw.clicked.connect(add_qw)
+btn_clear.clicked.connect(clear)
 
 test_win.show()
 app.exec()

@@ -5,7 +5,8 @@ from PyQt5.QtCore import Qt
 
 test_win = QWidget()
 test_win.resize(600,500)
-test_win.setWindowTitle("MEMOTTY CARD")
+test_win.move(300,300)
+test_win.setWindowTitle("MEMORRY CARD")
 
 btn_mune = QPushButton("Menu")
 btn_rest = QPushButton("Rest")
@@ -49,7 +50,7 @@ line_h2.addWidget(lbl_qw)
 
 line_h3.addWidget(box_result)
 box_result.hide()
-line_h3.ad.dWidget(box_ans)
+line_h3.addWidget(box_ans)
 
 line_h4.addStretch(2)
 line_h4.addWidget(btn_check)
@@ -71,11 +72,11 @@ line_V2.addWidget(rbn_list[2])
 line_V2.addWidget(rbn_list[3])
 line_h5.addLayout(line_V2)
 line_h5.addLayout(line_V3)
-box_ans.addLayout(line_h5)
+box_ans.setLayout(line_h5)
 
 main_line.addLayout(line_h1)
 main_line.addLayout(line_h2)
 main_line.addLayout(line_h3)
 main_line.addLayout(line_h4)
 
-test_win.setlayout(main_line)
+test_win.setLayout(main_line)
