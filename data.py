@@ -20,3 +20,15 @@ qw2 = Question("Який птах може літити задом на пере
 qw3 = Question("Який мозок у страуса?", "як горіх", "як у людини", "як у тигра", "як у земноводних")
 qw4 = Question("скільки зірок на небі?", "більше перечислиного", "міліарда", "триліард", "мільйон")
 qw_list = [qw1,qw2,qw3,qw4]
+
+
+#my class widgets
+from PyQt5.QtWidgets import (QWidget,QLabel,QPushButton,
+                            QSpinBox, QGroupBox, QRadioButton)
+
+class MyQwidget(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setStyleSheet('''
+
+                           ''')
