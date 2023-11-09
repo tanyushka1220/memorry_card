@@ -15,7 +15,7 @@ def stat():
     good = 0
     for q in qw_list:
         count += q.count
-        count_r += q.count_right
+        count_r += q.count_v
     if count != 0:
         good = count_r/count*100
     else:
@@ -47,7 +47,7 @@ def nul_ans():
 def check_ans():
     if btn_check.text() == "Check":
         if choice_ans == "":
-            mess = Q()
+            mess = QMessageBox()
             mess.setText("Text")
             mess.show()
             mess.exec()
@@ -70,11 +70,11 @@ def check_ans():
         box_result.hide()
 
 def clear():
-    qw_text = edit_qw.text()
-    ans_text = edit_ans.text()
-    wr1_text = edit_wrong1.text()
-    wr2_text = edit_wrong2.text()
-    wr3_text = edit_wrong3.text()
+    edit_qw.clear()
+    edit_ans.clear()
+    edit_wrong1.clear()
+    edit_wrong2.clear()
+    edit_wrong3.clear()
 
 def add_qw():
     qw_text = edit_qw.text()
@@ -82,12 +82,17 @@ def add_qw():
     wr1_text = edit_wrong1.text()
     wr2_text = edit_wrong2.text()
     wr3_text = edit_wrong3.text()
-    if qw_text != " " and ans_text != " " and wr1_text != " " and wr2_text != " " and wr3_text != " ":
+    if qw_text != "" and ans_text != "" and wr1_text != "" and wr2_text != "" and wr3_text != "":
         q = Question(qw_text, ans_text, wr1_text, wr2_text, wr3_text)
-        qw_list.append()
+        qw_list.append(q)
+        clear()
+        mes = QMessageBox()
+        mes.setText("New question add to list")
+        mes.show()
+        mes.exec()
     else:
         mes = QMessageBox()
-        mes.setText("text")
+        mes.setText("Not all information is written!")
         mes.show()
         mes.exec()
 

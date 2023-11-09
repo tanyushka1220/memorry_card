@@ -1,5 +1,5 @@
 class Question:
-    def init(self, qw, ans, vrong1, vrong2, vrong3):
+    def __init__(self, qw, ans, vrong1, vrong2, vrong3):
         self.qw = qw
         self.ans = ans 
         self.vrong1 = vrong1

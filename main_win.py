@@ -46,7 +46,7 @@ line_h1.addWidget(lbl_rest)
 
 line_h2.addWidget(lbl_qw, alignment= Qt.AlignCenter)
 
-line_h2.addWidget(lbl_qw)
+
 
 line_h3.addWidget(box_result)
 box_result.hide()
@@ -58,7 +58,7 @@ line_h4.addStretch(2)
 
 #block result
 line_V1 = QVBoxLayout()
-line_V1.addWidget(lbl_result, alignment=Qt.AlignLeft)
+line_V1.addWidget(lbl_ans, alignment=Qt.AlignLeft)
 line_V1.addWidget(lbl_result, alignment=Qt.AlignCenter)
 box_result.setLayout(line_V1)
 
@@ -68,8 +68,8 @@ line_V3 = QVBoxLayout()
 line_h5 = QHBoxLayout()
 line_V2.addWidget(rbn_list[0])
 line_V2.addWidget(rbn_list[1])
-line_V2.addWidget(rbn_list[2])
-line_V2.addWidget(rbn_list[3])
+line_V3.addWidget(rbn_list[2])
+line_V3.addWidget(rbn_list[3])
 line_h5.addLayout(line_V2)
 line_h5.addLayout(line_V3)
 box_ans.setLayout(line_h5)
