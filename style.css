@@ -1,16 +1,18 @@
 body{
-    background-color: LightGreen;
+    background-color: rgb(189, 248, 189);
     color: DarkGreen;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     font-size: 15px;
-     font-weight: 200;
-     font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    font-weight: 100;
+    font-style: italic;
 
-     border: 5px outset DarkGreen;
-     border-bottom: 9px outset DarkGreen;
-     border-right: 9px outset DarkGreen;
-     border-radius: 13px;
-     padding: 5px;
+    border: 5px outset DarkGreen;
+    border-bottom: 8px outset DarkGreen;
+    border-right: 8px outset DarkGreen;
+    border-radius: 13px;
+    padding: 5px;
 
-     background-color: rgb(106, 170, 106);
+    background-color: rgb(106, 170, 106);
+
+    text-shadow: 3px 3px 3px DarkGreen;
 }

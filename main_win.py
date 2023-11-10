@@ -1,21 +1,20 @@
-from PyQt5.QtWidgets import (QLabel,QPushButton,
-                            QSpinBox, QGroupBox, QButtonGroup, 
+from PyQt5.QtWidgets import (QLabel,QGroupBox, QButtonGroup, 
                             QRadioButton, QVBoxLayout, QHBoxLayout)
 from PyQt5.QtCore import Qt
-from data import MyWidget, MyPushButton
+from data import MyWidget, MyPushButton, MyLabel, MySpinBox
 
 test_win = MyWidget()
 test_win.resize(600,500)
 test_win.move(300,300)
 test_win.setWindowTitle("MEMORRY CARD")
 
-btn_mune = QPushButton("Menu")
-btn_rest = QPushButton("Rest")
-time_rest = QSpinBox()
+btn_mune = MyPushButton("Menu")
+btn_rest = MyPushButton("Rest")
+time_rest = MySpinBox()
 time_rest.setValue(30)
-lbl_rest = QLabel("minutes")
+lbl_rest = MyLabel("minutes")
 
-lbl_qw = QLabel("question")
+lbl_qw = MyLabel("question")
 
 box_ans = QGroupBox()
 box_ans.setTitle("Answer")
@@ -31,7 +30,7 @@ box_result.setTitle("Result")
 lbl_ans = QLabel("ans")
 lbl_result = QLabel("result")
 
-btn_check = QPushButton("Check")
+btn_check = MyPushButton("Check")
 
 main_line = QVBoxLayout()
 line_h1 = QHBoxLayout()

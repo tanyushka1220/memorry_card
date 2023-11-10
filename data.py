@@ -30,11 +30,11 @@ class MyWidget(QWidget):
     def __init__(self):
         super().__init__()
         self.setStyleSheet('''
-                            background-color: Silver;
-                            color: black;
-                            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-                            font-size: 20px;
-                            font-weight: bold;
+                            background-color: rgb(189, 248, 189);
+                            color: DarkGreen;
+                            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                            font-size: 15px;
+                            font-weight: 100;
                             font-style: italic;
                            ''')
         
@@ -44,12 +44,30 @@ class MyPushButton(QPushButton):
         self.setStyleSheet('''
                             QPushButton{
                             border: 5px outset DarkGreen;
-                            bord er-bottom: 9px outset DarkGreen;
-                            bord er-right: 9px outset DarkGreen;
-                            bord er-radius: 13px;
-                            padd ing: 5px;
+                            border-bottom: 8px outset DarkGreen;
+                            border-right: 8px outset DarkGreen;
+                            border-radius: 13px;
+                            padding: 5px;
                             }
                            QPushButton:pressed{
+                           border: 5px inset DarkGreen;
+                           border-bottom: 8px inset DarkGreen;
+                           border-right: 8px inset DarkGreen;
                            background-color: rgb(106, 170, 106);
+                           color: rgb(2, 155, 2);
                            }
                            ''')
+
+class MyLabel(QLabel):
+    def __init__(self, text):
+        super().__init__(text)
+        self.setStyleSheet('''
+                            font-size: 26px;
+                            ''')
+        
+class MySpinBox(QSpinBox):
+    def __init__(self):
+        super().__init__()
+        self.setStyleSheet('''
+                            border: 3px outset DarkGreen;
+                            ''')

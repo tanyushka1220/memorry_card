@@ -1,8 +1,8 @@
-from PyQt5.QtWidgets import (QWidget,QLabel,QPushButton,
-                            QLineEdit, QGridLayout)
+from PyQt5.QtWidgets import (QLabel,QLineEdit, QGridLayout)
 from PyQt5.QtCore import Qt
+from data import MyWidget, MyPushButton, MyLabel
 
-edit_win = QWidget()
+edit_win = MyWidget()
 
 edit_win.resize(600,500)
 edit_win.setWindowTitle("CARD")
@@ -20,15 +20,15 @@ edit_wrong1 = QLineEdit()
 edit_wrong2 = QLineEdit()
 edit_wrong3 = QLineEdit()
 
-btn_add_qw = QPushButton("Add question")
-btn_clear = QPushButton("Clear")
+btn_add_qw = MyPushButton("Add question")
+btn_clear = MyPushButton("Clear")
 
-lbl_stat = QLabel("Statistic")
+lbl_stat = MyLabel("Statistic")
 lbl_count = QLabel("Count of answers")
 lbl_count_right = QLabel("Count of right answers")
 lbl_good = QLabel("Good %")
 
-btn_back = QPushButton("Back")
+btn_back = MyPushButton("Back")
 
 grid = QGridLayout()
 grid.addWidget(lbl_qw_edit, 0,0)
