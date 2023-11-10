@@ -26,9 +26,30 @@ qw_list = [qw1,qw2,qw3,qw4]
 from PyQt5.QtWidgets import (QWidget,QLabel,QPushButton,
                             QSpinBox, QGroupBox, QRadioButton)
 
-class MyQwidget(QWidget):
+class MyWidget(QWidget):
     def __init__(self):
         super().__init__()
         self.setStyleSheet('''
-
+                            background-color: Silver;
+                            color: black;
+                            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                            font-size: 20px;
+                            font-weight: bold;
+                            font-style: italic;
+                           ''')
+        
+class MyPushButton(QPushButton):
+    def __init__(self, text):
+        super().__init__(text)
+        self.setStyleSheet('''
+                            QPushButton{
+                            border: 5px outset DarkGreen;
+                            bord er-bottom: 9px outset DarkGreen;
+                            bord er-right: 9px outset DarkGreen;
+                            bord er-radius: 13px;
+                            padd ing: 5px;
+                            }
+                           QPushButton:pressed{
+                           background-color: rgb(106, 170, 106);
+                           }
                            ''')

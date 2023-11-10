@@ -1,9 +1,10 @@
-from PyQt5.QtWidgets import (QWidget,QLabel,QPushButton,
+from PyQt5.QtWidgets import (QLabel,QPushButton,
                             QSpinBox, QGroupBox, QButtonGroup, 
                             QRadioButton, QVBoxLayout, QHBoxLayout)
 from PyQt5.QtCore import Qt
+from data import MyWidget, MyPushButton
 
-test_win = QWidget()
+test_win = MyWidget()
 test_win.resize(600,500)
 test_win.move(300,300)
 test_win.setWindowTitle("MEMORRY CARD")

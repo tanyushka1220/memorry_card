@@ -1,4 +1,16 @@
 body{
-    background-color: Silver;
-    color: black;
+    background-color: LightGreen;
+    color: DarkGreen;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     font-size: 15px;
+     font-weight: 200;
+     font-style: italic;
+
+     border: 5px outset DarkGreen;
+     border-bottom: 9px outset DarkGreen;
+     border-right: 9px outset DarkGreen;
+     border-radius: 13px;
+     padding: 5px;
+
+     background-color: rgb(106, 170, 106);
 }
