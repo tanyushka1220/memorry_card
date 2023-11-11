@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QApplication, QMessageBox
 app = QApplication([])
 from main_win import*
-from data import qw_list,Question
+from data import qw_list,Question, MyMessageBox
 from random import shuffle, choice
 from edit_win import*
 
@@ -47,10 +47,10 @@ def nul_ans():
 def check_ans():
     if btn_check.text() == "Check":
         if choice_ans == "":
-            mess = QMessageBox()
-            mess.setText("Text")
-            mess.show()
-            mess.exec()
+            mess = MyMessageBox("Text")
+            #mess.setText("Text")
+            #mess.show()
+            #mess.exec()
         else:
             if choice_ans == qw.ans:
                 lbl_result.setText("Great!") 
@@ -86,15 +86,9 @@ def add_qw():
         q = Question(qw_text, ans_text, wr1_text, wr2_text, wr3_text)
         qw_list.append(q)
         clear()
-        mes = QMessageBox()
-        mes.setText("New question add to list")
-        mes.show()
-        mes.exec()
+        mes = MyMessageBox("New question add to list")
     else:
-        mes = QMessageBox()
-        mes.setText("Not all information is written!")
-        mes.show()
-        mes.exec()
+        mes = MyMessageBox("Not all information is written!")
 
 def click_ans(rbn):
     global choice_ans

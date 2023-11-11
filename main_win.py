@@ -1,12 +1,12 @@
-from PyQt5.QtWidgets import (QLabel,QGroupBox, QButtonGroup, 
-                            QRadioButton, QVBoxLayout, QHBoxLayout)
+from PyQt5.QtWidgets import (QLabel,QButtonGroup, 
+                            QVBoxLayout, QHBoxLayout)
 from PyQt5.QtCore import Qt
-from data import MyWidget, MyPushButton, MyLabel, MySpinBox
+from data import MyWidget, MyPushButton, MyLabel, MySpinBox, MyGroupBox, MyRadioButton
 
 test_win = MyWidget()
-test_win.resize(600,500)
-test_win.move(300,300)
-test_win.setWindowTitle("MEMORRY CARD")
+#test_win.resize(600,500)
+#test_win.move(300,300)
+#test_win.setWindowTitle("MEMORRY CARD")
 
 btn_mune = MyPushButton("Menu")
 btn_rest = MyPushButton("Rest")
@@ -16,16 +16,16 @@ lbl_rest = MyLabel("minutes")
 
 lbl_qw = MyLabel("question")
 
-box_ans = QGroupBox()
+box_ans = MyGroupBox()
 box_ans.setTitle("Answer")
 rbn_list = list()
 rbn_group = QButtonGroup()
 for i in range(4):
-    rbt = QRadioButton("a")
+    rbt = MyRadioButton("a")
     rbn_group.addButton(rbt)
     rbn_list.append(rbt)
 
-box_result = QGroupBox()
+box_result = MyGroupBox()
 box_result.setTitle("Result")
 lbl_ans = QLabel("ans")
 lbl_result = QLabel("result")

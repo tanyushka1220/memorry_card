@@ -23,12 +23,48 @@ qw_list = [qw1,qw2,qw3,qw4]
 
 
 #my class widgets
-from PyQt5.QtWidgets import (QWidget,QLabel,QPushButton,
-                            QSpinBox, QGroupBox, QRadioButton)
+from PyQt5.QtWidgets import (QWidget,QLabel,QPushButton, QLineEdit,
+                            QSpinBox, QGroupBox, QRadioButton, QMessageBox)
+class MyMessageBox(QMessageBox):
+    def __init__(self, text):
+        super().__init__()
+        self.setWindowTitle("MEMORRY CARD")
+        self.setStyleSheet('''
+                        QPushButton{
+                            border: 5px outset DarkGreen;
+                            border-bottom: 8px outset DarkGreen;
+                            border-right: 8px outset DarkGreen;
+                            border-radius: 13px;
+                            padding: 5px;
+                            }
+                        QPushButton:pressed{
+                           border: 5px inset DarkGreen;
+                           border-bottom: 8px inset DarkGreen;
+                           border-right: 8px inset DarkGreen;
+                           background-color: rgb(106, 170, 106);
+                           color: rgb(2, 155, 2);
+                           }
+                        QMessageBox{
+                            background-color: rgb(189, 248, 189);
+                            }
+                        Qlabel{
+                            color: DarkGreen;
+                            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                            font-size: 15px;
+                            font-weight: 100;
+                            font-style: italic;
+                           }
+                           ''')
+        self.setText(text)
+        self.show()
+        self.exec()
 
 class MyWidget(QWidget):
     def __init__(self):
         super().__init__()
+        self.resize(600,500)
+        self.move(300,300)
+        self.setWindowTitle("MEMORRY CARD")
         self.setStyleSheet('''
                             background-color: rgb(189, 248, 189);
                             color: DarkGreen;
@@ -69,5 +105,38 @@ class MySpinBox(QSpinBox):
     def __init__(self):
         super().__init__()
         self.setStyleSheet('''
+                            border: 3px outset DarkGreen;
+                            ''')
+class MyGroupBox(QGroupBox):
+    def __init__(self):
+        super().__init__()
+        self.setStyleSheet('''
+                            border: 3px outset DarkGreen;
+                            border-radius: 13px;
+                            ''')
+        
+class MyRadioButton(QRadioButton):
+    def __init__(self, text):
+        super().__init__(text)
+        self.setStyleSheet('''
+                        QRadioButton{
+                            border: none;
+                            }
+                        QRadioButton:indicator{
+                            background-color: DarkGreen;
+                            border-radius: 13px;
+                            border: 3px outset DarkGreen;
+                            }
+                        QRadioButton:indicator:checked{
+                            background-color: rgb(157, 211, 157);
+                            }
+                            ''')
+
+class MyLineEdit(QLineEdit):
+    def __init__(self):
+        super().__init__()
+        self.setStyleSheet('''
+                            background-color: rgb(206, 248, 206);
+                            border-radius: 13px;
                             border: 3px outset DarkGreen;
                             ''')
